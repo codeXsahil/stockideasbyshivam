@@ -23,8 +23,8 @@ const Hero = () => {
 
             {/* Navbar / Top Bar */}
             <nav className="w-full max-w-6xl flex justify-between items-center py-4 z-10">
-                <div className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-trading-main to-trading-success">
-                    LOGO
+                <div className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-trading-main to-trading-success">
+                    Stock Ideas by Shivam
                 </div>
                 <div className="flex gap-4">
                     <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-[#0088cc] transition-colors"><Send size={20} /></a>

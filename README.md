@@ -1,16 +1,34 @@
-# React + Vite
+# Stock Ideas by Shivam - Trading Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-converting, ads-optimized landing page for **Stock Ideas by Shivam**, built with React, Vite, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## 🚀 Features
+- **Premium Dark Theme**: Designed for trust and authority.
+- **Mobile-First**: Optimized for mobile traffic with sticky CTAs.
+- **High Performance**: Fast load times with zero heavy dependencies.
+- **Interactive**: Glassmorphism, animations (Framer Motion), and dynamic charts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Connect
+- **Telegram**: [@stockideasbyshivam](https://t.me/stockideasbyshivam)
+- **YouTube**: Stock Ideas by Shivam
+- **Mentor**: Shivam Rai
 
-## React Compiler
+## 🛠️ Tech Stack
+- React + Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide React Icons
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📦 Deployment
+Live Demo: [https://codeXsahil.github.io/stockideasbyshivam/](https://codeXsahil.github.io/stockideasbyshivam/)
 
-## Expanding the ESLint configuration
+## 💻 Run Locally
+```bash
+git clone https://github.com/codeXsahil/stockideasbyshivam.git
+cd stockideasbyshivam
+npm install
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+Built by [CodeBhai](https://github.com/codeXsahil)
