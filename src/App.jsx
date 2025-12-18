@@ -10,13 +10,24 @@ import Disclaimer from './components/Disclaimer';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
 
+
+import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <div className="min-h-screen bg-trading-bg text-white font-body selection:bg-trading-main selection:text-black">
+      <Toaster position="bottom-center" toastOptions={{
+        style: {
+          background: '#161b2e',
+          color: '#fff',
+          border: '1px solid rgba(255,255,255,0.1)',
+        },
+      }} />
       <Hero />
       <TrustStrip />
       <Audience />
       <Features />
+
       <PremiumGroup />
       <HowItWorks />
       <SocialProof />
@@ -27,5 +38,6 @@ function App() {
     </div>
   )
 }
+
 
 export default App
