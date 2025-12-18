@@ -3,14 +3,48 @@ import { Send, Youtube, TrendingUp, BarChart2, DollarSign, PlayCircle } from 'lu
 import toast from 'react-hot-toast';
 
 const Hero = () => {
-    const handleLiveClick = () => {
-        toast('Redirecting to Live Stream...', {
-            icon: '🔴',
-            style: {
-                background: '#161b2e',
-                color: '#fff',
-            }
-        });
+    const handleSubscribeClick = () => {
+        toast.custom((t) => (
+            <div
+                className={`${t.visible ? 'animate-enter' : 'animate-leave'
+                    } max-w-md w-full bg-[#161b2e] shadow-2xl rounded-xl pointer-events-auto flex ring-1 ring-black ring-opacity-5 border border-red-500/30 p-4`}
+            >
+                <div className="flex-1 w-0 p-2">
+                    <div className="flex items-start">
+                        <div className="flex-shrink-0 pt-0.5">
+                            <div className="h-10 w-10 rounded-full bg-red-600 flex items-center justify-center">
+                                <Youtube className="text-white" size={24} />
+                            </div>
+                        </div>
+                        <div className="ml-3 flex-1">
+                            <p className="text-sm font-medium text-white">
+                                Confirm Subscription
+                            </p>
+                            <p className="mt-1 text-sm text-gray-400">
+                                Click below to subscribe to Stock Ideas by Shivam!
+                            </p>
+                            <div className="mt-3 flex gap-3">
+                                <a
+                                    href="https://youtube.com/@stockideasbyshivam?sub_confirmation=1"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => toast.dismiss(t.id)}
+                                    className="bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-4 py-2 rounded-lg transition-colors flex items-center gap-2"
+                                >
+                                    Subscribe Now
+                                </a>
+                                <button
+                                    onClick={() => toast.dismiss(t.id)}
+                                    className="text-gray-400 hover:text-white text-sm font-medium px-2 py-1"
+                                >
+                                    Later
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        ), { duration: 5000 });
     };
 
     return (
@@ -78,12 +112,14 @@ const Hero = () => {
                         transition={{ delay: 0.4 }}
                         className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
                     >
-                        <button className="bg-[#0088cc] hover:bg-[#0077b5] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,136,204,0.3)] transition-all">
-                            <Send size={24} /> Join Free Telegram
-                        </button>
-                        <button onClick={handleLiveClick} className="bg-white/5 border border-white/10 hover:bg-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all">
-                            <PlayCircle size={24} className="text-red-500" /> Watch Live
-                        </button>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                            <a href="https://t.me/stockideasbyshivam" target="_blank" className="bg-[#0088cc] hover:bg-[#0077b5] text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,136,204,0.3)] transition-all">
+                                <Send size={24} /> Join Free Telegram
+                            </a>
+                            <button onClick={handleSubscribeClick} className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(220,38,38,0.3)] transition-all">
+                                <Youtube size={24} /> Subscribe Now
+                            </button>
+                        </div>
                     </motion.div>
 
                     {/* Stats Ticker */}
@@ -104,21 +140,19 @@ const Hero = () => {
                     <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#000] group cursor-pointer">
                         {/* Live Badge Overlay */}
                         <div className="absolute top-4 left-4 z-10 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded flex items-center gap-1">
-                            <WifiIcon /> LIVE
+                            <WifiIcon /> LIVE / LATEST
                         </div>
 
                         {/* Video Thumbnail / Player */}
                         <div className="relative aspect-video bg-gray-900 group-hover:scale-105 transition-transform duration-500">
-                            <img
-                                src="https://i.ytimg.com/vi/jfKfPfyJRdk/maxresdefault.jpg"
-                                alt="Live Stream Thumbnail"
-                                className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity"
-                            />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center shadow-[0_0_30px_rgba(220,38,38,0.5)] group-hover:scale-110 transition-transform">
-                                    <PlayCircle size={32} fill="white" className="text-white" />
-                                </div>
-                            </div>
+                            <iframe
+                                className="w-full h-full"
+                                src="https://www.youtube.com/embed?listType=playlist&list=UUrm2Dj3S1vHbbz62QIYsP3w&autoplay=1&mute=1&controls=1&modestbranding=1&loop=1&start=60"
+                                title="Latest Market Analysis"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                            <div className="absolute inset-0 pointer-events-none group-hover:bg-transparent transition-colors"></div>
                         </div>
 
                         {/* Live Chat Mockup (Social Proof) */}
@@ -137,6 +171,15 @@ const Hero = () => {
 
             </div>
         </div>
+    );
+};
+
+const CountdownTimer = () => {
+    // Simple mock countdown for "Next Session"
+    return (
+        <span className="text-red-500 font-bold bg-red-500/10 px-2 py-0.5 rounded border border-red-500/20">
+            02:15:45
+        </span>
     );
 };
 

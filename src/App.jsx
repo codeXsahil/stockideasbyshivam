@@ -1,15 +1,18 @@
 import Hero from './components/Hero';
 import TrustStrip from './components/TrustStrip';
+import WinWall from './components/WinWall';
 import Audience from './components/Audience';
 import Features from './components/Features';
 import PremiumGroup from './components/PremiumGroup';
 import HowItWorks from './components/HowItWorks';
 import SocialProof from './components/SocialProof';
+import FAQ from './components/FAQ';
+import Mentor from './components/Mentor';
 import CTA from './components/CTA';
 import Disclaimer from './components/Disclaimer';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
-
+import LiveNotifications from './components/LiveNotifications';
 
 import { Toaster } from 'react-hot-toast';
 
@@ -23,14 +26,17 @@ function App() {
           border: '1px solid rgba(255,255,255,0.1)',
         },
       }} />
+      <LiveNotifications />
       <Hero />
       <TrustStrip />
+      <WinWall />
       <Audience />
       <Features />
-
       <PremiumGroup />
       <HowItWorks />
       <SocialProof />
+      <FAQ />
+      <Mentor />
       <CTA />
       <Disclaimer />
       <Footer />
@@ -38,6 +44,8 @@ function App() {
     </div>
   )
 }
+
+
 
 
 export default App
