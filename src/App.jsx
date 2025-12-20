@@ -1,49 +1,19 @@
-import Hero from './components/Hero';
-import TrustStrip from './components/TrustStrip';
-import WinWall from './components/WinWall';
-import Audience from './components/Audience';
-import Features from './components/Features';
-import PremiumGroup from './components/PremiumGroup';
-import HowItWorks from './components/HowItWorks';
-import SocialProof from './components/SocialProof';
-import FAQ from './components/FAQ';
-import Mentor from './components/Mentor';
-import CTA from './components/CTA';
-import Disclaimer from './components/Disclaimer';
-import Footer from './components/Footer';
-import StickyCTA from './components/StickyCTA';
-import LiveNotifications from './components/LiveNotifications';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AdLanding from './pages/AdLanding';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
-    <div className="min-h-screen bg-trading-bg text-white font-body selection:bg-trading-main selection:text-black">
-      <Toaster position="bottom-center" toastOptions={{
-        style: {
-          background: '#161b2e',
-          color: '#fff',
-          border: '1px solid rgba(255,255,255,0.1)',
-        },
-      }} />
-      <LiveNotifications />
-      <Hero />
-      <TrustStrip />
-      <WinWall />
-      <Audience />
-      <Features />
-      <PremiumGroup />
-      <HowItWorks />
-      <SocialProof />
-      <FAQ />
-      <Mentor />
-      <CTA />
-      <Disclaimer />
-      <Footer />
-      <StickyCTA />
-    </div>
+    <Router basename="/stockideasbyshivam">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/join" element={<AdLanding />} />
+      </Routes>
+    </Router>
   )
 }
+
 
 
 
